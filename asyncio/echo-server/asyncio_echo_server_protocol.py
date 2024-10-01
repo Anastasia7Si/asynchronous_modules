@@ -33,7 +33,7 @@ class EchoServer(asyncio.Protocol):
     def eof_received(self):
         self.log.debug('received EOF')
         if self.transport.can_write_eof():
-            self.transport.write_oef()
+            self.transport.write_eof()
 
 
 factory = event_loop.create_server(EchoServer, *SERVER_ADDRESS)
